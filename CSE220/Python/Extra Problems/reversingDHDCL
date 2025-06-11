@@ -1,0 +1,11 @@
+def reversingDHDCL(dh):
+  temp=dh.next
+  tail=dh.prev
+  while(temp!=dh):
+    nextNode=temp.next
+    temp.next=temp.prev
+    temp.prev=nextNode
+    tempp=temp.prev
+
+  dh.next=tail
+  dh.prev=tail.prev
