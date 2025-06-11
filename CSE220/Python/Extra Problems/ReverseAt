@@ -1,0 +1,22 @@
+def reverseAt(head,idx):
+  temp=head
+  prev=None
+  count=0
+  while(count<=idx):
+    next_Node=temp.next
+    temp.next=prev
+    prev=temp
+    temp=next_Node
+    count+=1
+
+  new_head=prev
+  while(prev.next!=None):
+    prev=prev.next
+
+  prev.next=temp
+  return new_head
+
+
+obj = createList(np.array([10,20,15,13,16,20]))
+idx=int(input())
+printList(reverseAt(obj,idx))
