@@ -1,0 +1,26 @@
+def rotating_singlylinkedlist(head):
+
+
+ current=head
+ n=int(input("How many times you want to rotate the linked list?:"))
+ for i in range(n):
+    temp=current
+    prev=None
+    while(temp.next!=None):
+       prev=temp
+       temp=temp.next
+    prev.next=None
+    temp.next=current
+    current=temp
+
+
+
+ return current
+
+
+
+
+obj = createList(np.array([10,20,15,13,16,20]))
+printList(obj)
+result=rotating_singlylinkedlist(obj)
+printList(result)
