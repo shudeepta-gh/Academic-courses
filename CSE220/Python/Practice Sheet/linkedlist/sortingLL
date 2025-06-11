@@ -1,0 +1,32 @@
+def length_of_list(head):
+    temp = head
+    count = 0
+    while temp:
+        count += 1
+        temp = temp.next
+    return count
+
+def sortingLL(head):
+    if not head or not head.next:
+        return head
+
+    length = length_of_list(head)
+
+    for i in range(length - 1):
+        temp = head
+        for j in range(length - 1 - i):
+            if temp.elem > temp.next.elem:  # Ascending order
+                temp.elem, temp.next.elem = temp.next.elem, temp.elem
+            temp = temp.next
+
+    return head
+
+# Test the sorting function
+arr = [10, 20, 15, 13, 16, 20]
+obj = createList(arr)
+print("Original List:")
+printList(obj)
+
+print("\nSorted List:")
+sorted_obj = sortingLL(obj)
+printList(sorted_obj)
