@@ -1,0 +1,7 @@
+def is_complete(self, node, index, total_nodes):
+    if node is None:
+        return True
+    if index > total_nodes:
+        return False
+    return (self.is_complete(node.left, 2 * index, total_nodes) and
+            self.is_complete(node.right, 2 * index + 1, total_nodes))
