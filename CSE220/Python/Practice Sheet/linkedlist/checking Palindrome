@@ -1,0 +1,46 @@
+def length(head):
+  temp=head.next
+  count=0
+  while(temp!=head):
+    count+=1
+    temp=temp.next
+
+  return count
+
+def nodeAt(head,idx):
+  temp=head.next
+  count=0
+  if(idx<=length(head)-1):
+    while(temp!=head):
+      if(idx==count):
+        return temp
+
+      count+=1
+      temp=temp.next
+  else:
+    print("Invalid index")
+
+
+
+def check_palindrome(head):
+  temp=head.next
+  count=0
+  n=length(head)
+  while(temp!=head):
+    if(count<n//2):
+      first_node=nodeAt(head,count)
+      last_node=nodeAt(head,n-1-count)
+      if(first_node.elem!=last_node.elem):
+        return "Not palindrome"
+      count+=1
+
+
+
+    temp=temp.next
+
+  return "Palindrome"
+
+
+
+obj = createDHDCL(np.array([10,20,15,20,10]))
+print(check_palindrome(obj))
