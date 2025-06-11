@@ -1,0 +1,29 @@
+def isperfcet(root):
+  if(root==None):
+    return None
+  d = depth(root)
+  result = depth_checking(root,d)
+
+
+def depth(root):
+  depth = 0
+  while(root!=None):
+    depth+=1
+    root = root.left
+  return depth
+
+def depth_checking(root,depth,level=0):
+  if(root == None):
+    return True
+
+  if(root.left==None and root.right == None):
+    if(depth!=level+1):
+      return False
+  if(root.left!= None or root.right!=None):
+      return False
+
+
+
+  result = depth_checking(root.left,depth,level+1)
+  result = depth_checking(root.right,depth,level+1)
+  return result
