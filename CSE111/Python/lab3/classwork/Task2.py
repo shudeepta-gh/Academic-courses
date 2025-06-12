@@ -1,30 +1,40 @@
-class Contacts:
-  def __init__(self,l1,l2):
-    self.contactDict={}
-    self.names=l1
-    self.numbers=l2
-
-    if len(l1)!=len(l2):
-      print("Contacts cannot be saved. Length Mismatch!")
-    else:
-      print("Contacts saved successfully")
-      for ind in range(len(l1)):
-        self.contactDict[l1[ind]]=l2[ind]
-        #self.contactDict.update({l1[ind]:l2[ind]}) #can use this way too
+class MangoTree:
+  def __init__(self,v):
+    self.variety=v
+    self.height=1
+    self.number_of_mangoes=0
 
 
 
 
-# Driver code
-names = ["Emergency", "Father", "Bestie"]
-numbers = ["999", "01xx23", "01xx87", "01xx65", "01xx43"]
+mangoTree1= MangoTree("Gopalbhog")
+# Display the details of the mango tree
+print("=====================================")
+print("Mango Tree Details:")
+print(f"Variety: {mangoTree1.variety}")
+print(f"Height: {mangoTree1.height} meter(s)")
+print(f"Number of mangoes on the tree: {mangoTree1.number_of_mangoes}")
+print("=====================================")
+mangoTree2= MangoTree("Amrapali")
+# Display the details of the mango tree
+print("Mango Tree Details:")
+print(f"Variety: {mangoTree2.variety}")
+print(f"Height: {mangoTree2.height} meter(s)")
+print(f"Number of mangoes on the tree: {mangoTree2.number_of_mangoes}")
+print("=====================================")
 
-m1 = Contacts(names, numbers)
-print("Saved Contacts:", m1.contactDict)
-print("---------------------------------------------")
+print("updated value after 5 years")
+print("========================================")
+print(f"Variety: {mangoTree1.variety}")
+mangoTree1.height=(mangoTree1.height)+(3*5)
+print(f"Height: {mangoTree1.height} meter(s)")
+mangoTree1.number_of_mangoes=(mangoTree1.height)*10
+print(f"Number of mangoes on the tree: {mangoTree1.number_of_mangoes}")
 
-names.append("Mother")
-numbers.pop()
+print("=========================================")
+print(f"Variety: {mangoTree2.variety}")
+mangoTree2.height=(mangoTree2.height)+(3*5)
+print(f"Height: {mangoTree2.height} meter(s)")
+mangoTree2.number_of_mangoes=(mangoTree2.height)*15
+print(f"Number of mangoes on the tree: {mangoTree2.number_of_mangoes}")
 
-m2 = Contacts(names, numbers)
-print("Saved Contacts:", m2.contactDict)
